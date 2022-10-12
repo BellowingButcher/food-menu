@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+// import FoodCard from './FoodCard';
 
 function Api () {
     const baseurl = 'https://astute-baton-362318.ue.r.appspot.com/api/json/';
@@ -18,12 +19,18 @@ function Api () {
         <div>
             
             {data.map((item) => {
-                return (<h1>{item.title}</h1>)
+                // console.log(item);
+                return (<div>
+                    {/* <h1><FoodCard props={item}/></h1> */}
+                    <p>{item.title}</p>
+                    <p>{item.description}</p>
+                    <p>{item.price}</p>
+                        </div>);
             })}
-        {/* {data[0].title} */}
         
         </div>
     );
 }
 export default Api
+
 
