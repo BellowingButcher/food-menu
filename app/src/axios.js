@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function Api () {
     const baseurl = 'https://astute-baton-362318.ue.r.appspot.com/api/json/';
