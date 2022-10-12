@@ -1,11 +1,13 @@
 import React from 'react';
 
-function FoodCard (props) {
-    return (<div>
-        <p>{props.title}</p>
-        <p>{props.description}</p>
-        <p>{props.price}</p>
-            </div>);
+function FoodCard(props) {
+    return (
+        <div>
+            <p>{props.item.title}</p>
+            <p>{props.item.description}</p>
+            <p>{props.item.price}</p>
+        </div>
+    );
 }
 
 export default FoodCard
