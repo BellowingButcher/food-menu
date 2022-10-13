@@ -30,10 +30,11 @@ function HomePage (props) {
         
         return (
             
-            
-            <div id='Breakfast'>
-                <HomeButton handleClick={handleClick} />
-                {breakInfo}
+            <div className="container">
+                <div className='row justify-content-center' id='Breakfast'>
+                    <HomeButton handleClick={handleClick} />
+                    {breakInfo}
+                </div>
             </div>
         
         )
@@ -67,11 +68,13 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            
-            <div id='Dinner'>
-                <HomeButton handleClick={handleClick} />
-                {dinnerInfo}
+            <div>
+                <div className='container'>
+                    <div className="row justify-content-center" id='Dinner'>
+                        <HomeButton handleClick={handleClick} />
+                        {dinnerInfo}
+                    </div>
+                </div>
             </div>
         
         )
@@ -88,10 +91,11 @@ function HomePage (props) {
         
         return (
             
-            
-            <div id='Dessert'>
-                <HomeButton handleClick={handleClick} />
-                {dessertInfo}
+            <div className="container">
+                <div className="row justify-content-center" id='Dessert'>
+                    <HomeButton handleClick={handleClick} />
+                    {dessertInfo}
+                </div>
             </div>
         
         )
