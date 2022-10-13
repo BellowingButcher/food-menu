@@ -50,10 +50,11 @@ function HomePage (props) {
         
         return (
             
-            
-            <div id='Lunch'>
-                <HomeButton handleClick={handleClick} />
-                {lunchInfo}
+            <div className='container'>
+                <div className='row justify-content-center' id='Lunch'>
+                    <HomeButton handleClick={handleClick} />
+                    {lunchInfo}
+                </div>
             </div>
         
         )
