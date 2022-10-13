@@ -19,11 +19,11 @@ function Api() {
         <div>
             {
                 data.map((item) => {
+                    return (<FoodCard key={item.id} item={item} />)
+                })
                     // console.log(item);
                     // let props = { item: item, test: "test", potato: "potato" }
                     // function FoodCard(props)
-                    return (<FoodCard key={item.id} item={item} />)
-                })
             }
         </div>
     )
