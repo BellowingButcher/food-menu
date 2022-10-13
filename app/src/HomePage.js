@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
-let page = 'home';
 function HomePage (props) {
-    if(page == 'home') {
-
+    const [page, updatePage] = useState('home');
+    function handleClick(e) {
+        console.log('Clicked', e.target.id)
+        updatePage(e.target.id);
+        
+    }
+    console.log(page);
+    if(page === 'home') {
+    //    { let lunch=document.getElementById('Lunch');
+    //     lunch.addEventListener('click', (e) => {handleClick(e.target)});}
         return (
             <div id='home'>
-                <MealTypeCard id='Dinner' text={'Dinner'}/>
-                <MealTypeCard id='Lunch' text={'Lunch'}/>
-                <MealTypeCard id='Breakfast' text={'Breakfast'}/>
-                <MealTypeCard id='Dessert' text={'Desserts'}/>
+                <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
+                <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
+                <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
+                <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
             </div>
             );
         }
+        // }
 
-    // if (page == 'Breakfast') {
+    // if (page === 'Breakfast') {
         
     //     return(
     //         <div id='BreakfastMenu'>
@@ -24,13 +32,13 @@ function HomePage (props) {
     //         </div>
     //     )
     // }
-    if (page == 'Lunch'){
+    if (page === 'Lunch'){
 
         let lunchInfo = props.data;
         lunchInfo = lunchInfo.filter((item) => (item.category.title) === 'Lunch')
 
         lunchInfo = lunchInfo.map(object => <FoodCard key={object.id} item={object} />);
-        console.log(lunchInfo);
+        // console.log(lunchInfo);
         
         return (
             
@@ -41,7 +49,7 @@ function HomePage (props) {
         
         )
     }
-    // if (page == 'Dinner'){
+    // if (page === 'Dinner'){
 
     //     return(
     //         <div id='Dinner'>
