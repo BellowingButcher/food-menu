@@ -3,8 +3,10 @@ import MealTypeCard from "./MealTypeCard";
 function HomePage () {
     return (
         <div>
-            <MealTypeCard text={'dinner'}/>
-            <MealTypeCard text={'lunch'}/>
+            <MealTypeCard text={'Dinner'}/>
+            <MealTypeCard text={'Lunch'}/>
+            <MealTypeCard text={'BreakFast'}/>
+            <MealTypeCard text={'Desserts'}/>
         </div>
             )
 }
