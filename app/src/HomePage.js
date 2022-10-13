@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
 import HomeButton from "./HomeButton";
+import Header from "./Header";
 function HomePage (props) {
     const [page, updatePage] = useState('Home');
     function handleClick(e) {
@@ -12,12 +13,19 @@ function HomePage (props) {
     console.log(page);
     if(page === 'Home') {
         return (
-            <div id='home'>
-                <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
-                <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
-                <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
-                <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
-            </div>
+            <>
+                <Header />
+                <div className="container">
+                    <div id='home' className="rowr">
+                        <div className="col justify-content-center">
+                            <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
+                            <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
+                            <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
+                            <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
+                        </div>
+                    </div>
+                </div>
+            </>
             );
         }
 
