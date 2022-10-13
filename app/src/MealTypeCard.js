@@ -1,6 +1,6 @@
 import React from "react";
 function MealTypeCard (props) {
-    return(<button>{props.text}</button>)
+    return(<button id={props.id}>{props.text}</button>)
 }
 
 export default MealTypeCard
