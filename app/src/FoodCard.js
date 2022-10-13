@@ -1,11 +1,15 @@
 import React from 'react';
 
 function FoodCard(props) {
+    
     return (
+        
         <div>
-            <p>{props.item.title}</p>
-            <p>{props.item.description}</p>
-            <p>{props.item.price}</p>
+            <ul>
+                <li>{props.item.title}</li>
+                <li>{props.item.description}</li>
+                <li>{props.item.price}</li>
+            </ul>
         </div>
     );
 }

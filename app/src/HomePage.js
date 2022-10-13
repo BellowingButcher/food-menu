@@ -1,19 +1,19 @@
 import React from "react";
 import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
-let page = 'home';
+let page = 'Lunch';
 function HomePage (props) {
-    // if(page == 'home') {
+    if(page == 'home') {
 
-    //     return (
-    //         <div id='typeDiv'>
-    //             <MealTypeCard text={'Dinner'}/>
-    //             <MealTypeCard text={'Lunch'}/>
-    //             <MealTypeCard text={'BreakFast'}/>
-    //             <MealTypeCard text={'Desserts'}/>
-    //         </div>
-    //         );
-    //     }
+        return (
+            <div id='typeDiv'>
+                <MealTypeCard text={'Dinner'}/>
+                <MealTypeCard text={'Lunch'}/>
+                <MealTypeCard text={'BreakFast'}/>
+                <MealTypeCard text={'Desserts'}/>
+            </div>
+            );
+        }
 
     // if (page == 'Breakfast') {
         
@@ -24,9 +24,13 @@ function HomePage (props) {
     //         </div>
     //     )
     // }
-    // if (page == 'Lunch'){
+    if (page == 'Lunch'){
 
-        // let lunchInfo = 
+        let lunchInfo = props.data;
+        lunchInfo = lunchInfo.filter((item) => (item.category.title) === 'Lunch')
+
+        lunchInfo = lunchInfo.map(object => <FoodCard key={object.id} item={object} />);
+        console.log(lunchInfo);
 
         //     {props.data.filter((item) => {item.category.title === 'Lunch'}).map((item) => {{item.category.title}})},
             
@@ -38,8 +42,9 @@ function HomePage (props) {
             
             
             <div id='Lunch'>
+
                 {/* <FoodCard item={props.data.filter((item) => {item.category.title === 'Lunch'})} /> */}
-                <FoodCard key={props.data[0].id} item={props.data[0]} />
+                {lunchInfo}
             </div>
         
         )
@@ -62,6 +67,6 @@ function HomePage (props) {
     //     )
     // }
 
-    // }
+    }
 
 export default HomePage
