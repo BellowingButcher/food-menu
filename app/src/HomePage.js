@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
+import HomeButton from "./HomeButton";
 function HomePage (props) {
-    const [page, updatePage] = useState('home');
+    const [page, updatePage] = useState('Home');
     function handleClick(e) {
         console.log('Clicked', e.target.id)
         updatePage(e.target.id);
         
     }
     console.log(page);
-    if(page === 'home') {
-    //    { let lunch=document.getElementById('Lunch');
-    //     lunch.addEventListener('click', (e) => {handleClick(e.target)});}
+    if(page === 'Home') {
         return (
             <div id='home'>
                 <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
@@ -21,17 +20,26 @@ function HomePage (props) {
             </div>
             );
         }
-        // }
 
-    // if (page === 'Breakfast') {
+    if (page === 'Breakfast') {
+        let breakInfo = props.data;
+        breakInfo = breakInfo.filter((item) => (item.category.title) === 'Breakfast')
+
+        breakInfo = breakInfo.map(object => <FoodCard key={object.id} item={object} />);
+        // console.log(lunchInfo);
         
-    //     return(
-    //         <div id='BreakfastMenu'>
-                
-    //             {/* some stuff here*/}
-    //         </div>
-    //     )
-    // }
+        return (
+            
+            
+            <div id='Breakfast'>
+                <HomeButton handleClick={handleClick} />
+                {breakInfo}
+            </div>
+        
+        )
+
+        
+    }
     if (page === 'Lunch'){
 
         let lunchInfo = props.data;
@@ -44,28 +52,51 @@ function HomePage (props) {
             
             
             <div id='Lunch'>
+                <HomeButton handleClick={handleClick} />
                 {lunchInfo}
             </div>
         
         )
     }
-    // if (page === 'Dinner'){
+    if (page === 'Dinner'){
+        let dinnerInfo = props.data;
+        dinnerInfo = dinnerInfo.filter((item) => (item.category.title) === 'Dinner')
 
-    //     return(
-    //         <div id='Dinner'>
-    //             {/* some stuff here */}
-    //         </div>
-    //     )
-    // }
+        dinnerInfo = dinnerInfo.map(object => <FoodCard key={object.id} item={object} />);
+        // console.log(lunchInfo);
+        
+        return (
+            
+            
+            <div id='Dinner'>
+                <HomeButton handleClick={handleClick} />
+                {dinnerInfo}
+            </div>
+        
+        )
 
-    // if (page == 'Dessert'){
+    }
 
-    //     return(
-    //         <div id='Dessert'>
-    //             {/* some stuff here */}
-    //         </div>
-    //     )
-    // }
+    if (page == 'Dessert'){
+
+        let dessertInfo = props.data;
+        dessertInfo = dessertInfo.filter((item) => (item.category.title) === 'Dessert')
+
+        dessertInfo = dessertInfo.map(object => <FoodCard key={object.id} item={object} />);
+        // console.log(lunchInfo);
+        
+        return (
+            
+            
+            <div id='Dessert'>
+                <HomeButton handleClick={handleClick} />
+                {dessertInfo}
+            </div>
+        
+        )
+
+
+    }
 
     }
 
