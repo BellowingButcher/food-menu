@@ -16,7 +16,7 @@ function HomePage (props) {
             <>
                 <Header />
                 <div className="container">
-                    <div id='home' className="rowr">
+                    <div id='home' className="row">
                         <div className="col justify-content-center">
                             <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
                             <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>

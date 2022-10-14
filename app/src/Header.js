@@ -2,7 +2,7 @@ import React from "react";
 function Header () {
     return(
         <>
-            <header className="container-fluid">
+            <header className="container-fluid bg-info">
                 <div className="row justify-content-evenly">
                     <div className="col flex-box text-start">
                         <h3>Any</h3>
