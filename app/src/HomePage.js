@@ -16,14 +16,12 @@ function HomePage (props) {
         return (
             <>
                 <Header />
-                <div className="container">
+                <div className="container vh-100">
                     <div id='home' className="row">
-                        <div className="col justify-content-center">
                             <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
                             <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
                             <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
                             <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
-                        </div>
                     </div>
                 </div>
                 <Footer />
@@ -39,13 +37,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            <div className="container">
-                <div className='row justify-content-center' id='Breakfast'>
-                    <HomeButton handleClick={handleClick} />
-                    {breakInfo}
-                </div>
-            </div>
+            <>
+            <Header />
+                    <div className="container">
+                        <div className='row justify-content-center' id='Breakfast'>
+                            <HomeButton handleClick={handleClick} />
+                            {breakInfo}
+                        </div>
+                    </div>
+            <Footer />
+            </>
         
         )
 
@@ -60,14 +61,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            <div className='container'>
-                <div className='row justify-content-center' id='Lunch'>
-                    <HomeButton handleClick={handleClick} />
-                    {lunchInfo}
-                </div>
-            </div>
-        
+            <>
+                <Header />
+                    <div className='container'>
+                        <div className='row justify-content-center' id='Lunch'>
+                            <HomeButton handleClick={handleClick} />
+                            {lunchInfo}
+                        </div>
+                    </div>
+                <Footer />
+            </>
         )
     }
     if (page === 'Dinner'){
@@ -78,15 +81,18 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            <div>
-                <div className='container'>
-                    <div className="row justify-content-center" id='Dinner'>
-                        <HomeButton handleClick={handleClick} />
-                        {dinnerInfo}
+            <>
+                <Header />
+                    <div>
+                        <div className='container'>
+                            <div className="row justify-content-center" id='Dinner'>
+                                <HomeButton handleClick={handleClick} />
+                                {dinnerInfo}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        
+                <Footer />
+            </>
         )
 
     }
@@ -100,14 +106,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            <div className="container">
-                <div className="row justify-content-center" id='Dessert'>
-                    <HomeButton handleClick={handleClick} />
-                    {dessertInfo}
-                </div>
-            </div>
-        
+            <>
+                <Header />
+                    <div className="container">
+                        <div className="row justify-content-center" id='Dessert'>
+                            <HomeButton handleClick={handleClick} />
+                            {dessertInfo}
+                        </div>
+                    </div>
+                <Footer />
+            </>
         )
 
 
