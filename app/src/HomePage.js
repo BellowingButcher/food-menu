@@ -2,22 +2,30 @@ import React, { useState } from "react";
 import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
 import HomeButton from "./HomeButton";
+import Header from "./Header";
+import Footer from "./footer";
 function HomePage (props) {
     const [page, updatePage] = useState('Home');
     function handleClick(e) {
-        console.log('Clicked', e.target.id)
+        // console.log('Clicked', e.target.id)
         updatePage(e.target.id);
         
     }
-    console.log(page);
+    // console.log(page);
     if(page === 'Home') {
         return (
-            <div id='home'>
-                <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
-                <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
-                <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
-                <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
-            </div>
+            <>
+                <Header />
+                <div className="container vh-100">
+                    <div id='home' className="row">
+                            <MealTypeCard handleClick={handleClick} id='Dinner' text={'Dinner'}/>
+                            <MealTypeCard handleClick={handleClick} id='Lunch' text={'Lunch'}/>
+                            <MealTypeCard handleClick={handleClick} id='Breakfast' text={'Breakfast'}/>
+                            <MealTypeCard handleClick={handleClick} id='Dessert' text={'Desserts'}/>
+                    </div>
+                </div>
+                <Footer />
+            </>
             );
         }
 
@@ -29,12 +37,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            
-            <div id='Breakfast'>
-                <HomeButton handleClick={handleClick} />
-                {breakInfo}
-            </div>
+            <>
+            <Header />
+                    <div className="container">
+                        <div className='row justify-content-center' id='Breakfast'>
+                            <HomeButton handleClick={handleClick} />
+                            {breakInfo}
+                        </div>
+                    </div>
+            <Footer />
+            </>
         
         )
 
@@ -49,13 +61,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            
-            <div id='Lunch'>
-                <HomeButton handleClick={handleClick} />
-                {lunchInfo}
-            </div>
-        
+            <>
+                <Header />
+                    <div className='container'>
+                        <div className='row justify-content-center' id='Lunch'>
+                            <HomeButton handleClick={handleClick} />
+                            {lunchInfo}
+                        </div>
+                    </div>
+                <Footer />
+            </>
         )
     }
     if (page === 'Dinner'){
@@ -66,18 +81,23 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            
-            <div id='Dinner'>
-                <HomeButton handleClick={handleClick} />
-                {dinnerInfo}
-            </div>
-        
+            <>
+                <Header />
+                    <div>
+                        <div className='container'>
+                            <div className="row justify-content-center" id='Dinner'>
+                                <HomeButton handleClick={handleClick} />
+                                {dinnerInfo}
+                            </div>
+                        </div>
+                    </div>
+                <Footer />
+            </>
         )
 
     }
 
-    if (page == 'Dessert'){
+    if (page === 'Dessert'){
 
         let dessertInfo = props.data;
         dessertInfo = dessertInfo.filter((item) => (item.category.title) === 'Dessert')
@@ -86,13 +106,16 @@ function HomePage (props) {
         // console.log(lunchInfo);
         
         return (
-            
-            
-            <div id='Dessert'>
-                <HomeButton handleClick={handleClick} />
-                {dessertInfo}
-            </div>
-        
+            <>
+                <Header />
+                    <div className="container">
+                        <div className="row justify-content-center" id='Dessert'>
+                            <HomeButton handleClick={handleClick} />
+                            {dessertInfo}
+                        </div>
+                    </div>
+                <Footer />
+            </>
         )
 
 

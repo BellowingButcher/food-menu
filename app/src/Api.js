@@ -15,7 +15,7 @@ function Api() {
     if (data.length === 0) return null;
 
     return (
-        <div id='body'>
+        <div id='body' className='container-fluid vh-100 bg-dark'>
             <HomePage data={data} />
         </div>
     )
