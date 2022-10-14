@@ -6,7 +6,7 @@ function Header () {
     // let image = require('https://github.com/BellowingButcher/food-menu/blob/mjw/design/app/src/WhaleBacon.jpeg');
     return(
         <>
-            <header className="container-fluid bg-info">
+            <header className="sticky-top bg-info container-fluid bg-info">
                 <div className="row justify-content-evenly">
                     <div className="col flex-box text-start">
                         <h3>Any</h3>

@@ -3,14 +3,15 @@ import MealTypeCard from "./MealTypeCard";
 import FoodCard from './FoodCard'
 import HomeButton from "./HomeButton";
 import Header from "./Header";
+import Footer from "./footer";
 function HomePage (props) {
     const [page, updatePage] = useState('Home');
     function handleClick(e) {
-        console.log('Clicked', e.target.id)
+        // console.log('Clicked', e.target.id)
         updatePage(e.target.id);
         
     }
-    console.log(page);
+    // console.log(page);
     if(page === 'Home') {
         return (
             <>
@@ -25,6 +26,7 @@ function HomePage (props) {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </>
             );
         }
@@ -89,7 +91,7 @@ function HomePage (props) {
 
     }
 
-    if (page == 'Dessert'){
+    if (page === 'Dessert'){
 
         let dessertInfo = props.data;
         dessertInfo = dessertInfo.filter((item) => (item.category.title) === 'Dessert')
