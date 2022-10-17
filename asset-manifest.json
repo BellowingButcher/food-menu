@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/food-menu/static/css/main.8b8d2b1e.css",
+    "main.js": "/food-menu/static/js/main.0dea124f.js",
+    "static/media/WhaleBacon.jpeg": "/food-menu/static/media/WhaleBacon.fa64e44dfb0f0037216b.jpeg",
+    "index.html": "/food-menu/index.html",
+    "main.8b8d2b1e.css.map": "/food-menu/static/css/main.8b8d2b1e.css.map",
+    "main.0dea124f.js.map": "/food-menu/static/js/main.0dea124f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b8d2b1e.css",
+    "static/js/main.0dea124f.js"
+  ]
+}
