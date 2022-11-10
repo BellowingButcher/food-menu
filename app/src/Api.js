@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import HomePage from './HomePage';
 function Api() {
-    const baseurl = 'https://astute-baton-362318.ue.r.appspot.com/api/json/';
+    const baseurl = 'https://8000-bellowingbutc-thebistro-bz6o3yicn90.ws-us75.gitpod.io/';
     const [data, setData] = useState([]);
 
     React.useEffect(() => {
         axios.get(baseurl).then((response) => {
             console.log(response);
-            setData(response.data);
+            setData(response.Meals);
         });
     }, []);
 
